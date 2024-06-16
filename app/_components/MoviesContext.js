@@ -6,7 +6,7 @@ import kingdofOfApes from "@/public/kingdomOfApes.jpg";
 import TVseries from "@/app/_components/TVseries";
 import MovieSvg from "@/app/_components/MovieSvg";
 import venom from "@/public/venom.jpg";
-import strangerThings from "@/public/strangerThings.jpg";
+import strangerThings from "@/public/strangerthings.jpg";
 import { createContext, useContext, useState } from "react";
 
 const MoviesContext = createContext();
