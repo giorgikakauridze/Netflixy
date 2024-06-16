@@ -13,7 +13,7 @@ const OppenheimerPage = () => {
         <div className="relative w-[100vh] ">
           <Image
             fill
-            quality={100}
+            quality={30}
             // height="1"
             className="object-top object-cover"
             src="https://i.pinimg.com/564x/e5/dd/89/e5dd8946ec656421e3ed366f8ea3ea20.jpg"

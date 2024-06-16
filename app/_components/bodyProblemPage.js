@@ -13,7 +13,7 @@ const BodyProblemPage = () => {
         <div className="relative w-[100vh] ">
           <Image
             fill
-            quality={100}
+            quality={30}
             // height="1"
             className="object-top object-cover"
             src="https://i.pinimg.com/564x/20/1b/ec/201becdadca4cfb31957c5d5330b0609.jpg"

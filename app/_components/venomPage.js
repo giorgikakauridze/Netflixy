@@ -13,7 +13,7 @@ const VenomPage = () => {
         <div className="relative w-[100vh] ">
           <Image
             fill
-            quality={100}
+            quality={30}
             // height="1"
             className="object-top object-cover"
             src="https://i.pinimg.com/736x/2f/28/45/2f2845fd8c0ba57e2be869b7520a2431.jpg"

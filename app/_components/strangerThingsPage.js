@@ -13,7 +13,7 @@ const StrangerThingsPage = () => {
         <div className="relative w-[100vh] ">
           <Image
             fill
-            quality={100}
+            quality={30}
             // height="1"
             className="object-top object-cover"
             src="https://i.pinimg.com/564x/d3/cb/da/d3cbda7118c130b62307347ff17af286.jpg"

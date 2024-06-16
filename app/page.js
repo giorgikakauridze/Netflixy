@@ -17,8 +17,8 @@ const Home = () => {
       setTimeout(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % movies.length);
         setFadeClass("fade-in");
-      }, 400);
-    }, 5000);
+      }, 500);
+    }, 8500);
 
     return () => clearInterval(interval);
   }, []);
@@ -30,9 +30,10 @@ const Home = () => {
           src={movies[currentIndex].src}
           fill
           objectFit="cover"
-          quality={100}
+          quality={50}
           className="object-cover object-top"
           alt={movies[currentIndex].text}
+          loading="lazy"
         />
         <div className="md:gap-10 gap-5 opacity-80 md:mx-5  lg:px-36 lg:py-36 p-12 pb-16 inset-0 flex flex-col items-start justify-end h-full ">
           <h1
@@ -54,7 +55,7 @@ const Home = () => {
           <Link
             href={`/details/${movies[currentIndex].id}
           `}
-            className={`w-[25svh] border-gray-500  transparent-blur-button xl:w-[20svh] xl:hover:w-[22svh]  px-5 py-3 rounded-[26px] border hover:w-[30svh]  flex justify-center gap-4     ${fadeClass}`}
+            className={`w-[25svh] border-gray-500  transparent-blur-button xl:w-[27svh] xl:hover:w-[29svh]  px-5 py-3 rounded-[26px] border hover:w-[30svh]  flex justify-center gap-4     ${fadeClass}`}
           >
             <ButtonSvg />
             <span>Play Trailer</span>

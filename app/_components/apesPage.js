@@ -13,7 +13,7 @@ const ApesPage = () => {
         <div className="relative w-[100vh] ">
           <Image
             fill
-            quality={100}
+            quality={30}
             // height="1"
             className="object-top object-cover"
             src="https://i.pinimg.com/736x/32/8f/3b/328f3be2071aa81bd1061e40e4e984a3.jpg"

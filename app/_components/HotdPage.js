@@ -13,7 +13,7 @@ const HotdPage = () => {
         <div className="relative w-[100vh] ">
           <Image
             fill
-            quality={100}
+            quality={30}
             // height="1"
             className="object-top object-cover"
             src="https://i.pinimg.com/564x/ec/0b/f4/ec0bf4c3c76191feda8e182ae45f171e.jpg"
