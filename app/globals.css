@@ -3,31 +3,108 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --foreground-rgb: 16, 20, 29;
+  --background-start-rgb: 16, 20, 29;
+  --background-end-rgb: 16, 20, 29;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background-start-rgb: 16, 20, 29;
+    --background-end-rgb: 16, 20, 29;
   }
 }
 
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    to bottom,
+    rgba(var(--background-start-rgb), 1),
+    rgba(var(--background-end-rgb), 0.95)
+  );
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    filter: blur(10px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 0;
+    filter: blur(10px);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1s forwards;
+}
+
+.fade-out {
+  animation: fadeOut 1s forwards;
+}
+
+.transparent-blur-input {
+  background-color: rgba(255, 255, 255, 0.206);
+  backdrop-filter: blur(10px);
+  color: white; /* Text color */
+  border: 1px solid rgba(255, 255, 255, 0.046);
+  /* padding: 0.5rem; Padding inside the input */
+  border-radius: 0rem; /* Rounded corners */
+  transition: width 0.5s ease-in-out; /* Smooth transition for width */
+}
+
+.transparent-blur-input::placeholder {
+  color: rgba(
+    255,
+    255,
+    255,
+    0.377
+  ); /* Placeholder text color with slight transparency */
+}
+
+.transparent-blur-button {
+  background-color: rgba(255, 255, 255, 0.312);
+  backdrop-filter: blur(10px);
+  color: white; /* Text color */
+  border: 1px solid rgba(255, 255, 255, 0);
+  cursor: pointer;
+  /* padding: 0.5rem; Padding inside the input */
+  border-radius: 1rem; /* Rounded corners */
+  transition: width 0.5s ease-in-out; /* Smooth transition for width */
+}
+
+@layer components {
+  .spinner {
+    margin: 3.2rem auto 1.6rem;
+    width: 60px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 8px solid theme("colors.primary.900");
+    border-right-color: theme("colors.primary.200");
+    animation: rotate 1s infinite linear;
+  }
+
+  @keyframes rotate {
+    to {
+      transform: rotate(1turn);
+    }
   }
 }
