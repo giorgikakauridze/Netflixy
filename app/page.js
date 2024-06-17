@@ -5,8 +5,19 @@ import ButtonSvg from "./_components/ButtonSvg";
 import CommaSvg from "./_components/CommaSvg";
 import Link from "next/link";
 import { useMovies } from "@/app/_components/MoviesContext";
+import { getImages } from "./_lib/imageLoader";
 // Copyright By Giorgi Kakauridze
-const Home = () => {
+
+export async function generateMetaData() {
+  const images = await getImages();
+  return {
+    props: {
+      images,
+    },
+  };
+}
+
+const Home = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [fadeClass, setFadeClass] = useState("fade-in");
   const { movies } = useMovies();
@@ -18,7 +29,7 @@ const Home = () => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % movies.length);
         setFadeClass("fade-in");
       }, 500);
-    }, 8500);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
@@ -30,7 +41,7 @@ const Home = () => {
           src={movies[currentIndex].src}
           fill
           objectFit="cover"
-          quality={50}
+          quality={100}
           className="object-cover object-top"
           alt={movies[currentIndex].text}
           loading="lazy"
