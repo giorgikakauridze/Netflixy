@@ -13,6 +13,7 @@ const MoviesContext = createContext();
 const initialState = [
   {
     src: hotd2,
+    urlName: "/rame.jpg",
     text: "House of the Dragon",
     year: "2022",
     type: "TV Series",
@@ -21,6 +22,7 @@ const initialState = [
   },
   {
     src: oppenheimer,
+    urlName: "/oppenheimer.jpg",
     text: "Oppenheimer",
     year: "2023",
     type: "Movie",
@@ -29,6 +31,7 @@ const initialState = [
   },
   {
     src: bodyProblem,
+    urlName: "/3bodyproblem.jpg",
     text: "3 Body Problem",
     year: "2024",
     type: "TV Series",
@@ -37,6 +40,7 @@ const initialState = [
   },
   {
     src: strangerThings,
+    urlName: "/strangerthings.jpg",
     text: "Stranger Things",
     year: "2016",
     type: "TV Series",
@@ -45,6 +49,7 @@ const initialState = [
   },
   {
     src: kingdofOfApes,
+    urlName: "/kingdomOfApes.jpg",
     text: "Kingdom of the Planet of the Apes",
     year: "2024",
     type: "Movie",
@@ -54,6 +59,7 @@ const initialState = [
 
   {
     src: venom,
+    urlName: "/venom.jpg",
     text: "Venom: The Last Dance",
     year: "2024",
     type: "Movie",
