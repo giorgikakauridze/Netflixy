@@ -1,3 +1,5 @@
+import { supabase } from "./supabase";
+
 export async function getMoviesByName(query) {
   const apiKey = "9dd6a06096e62e027d257b44a59fba23";
   const maxPages = 1; // Limit the number of pages to fetch
@@ -19,14 +21,6 @@ export async function getMoviesByName(query) {
   };
 }
 
-// export default function debounce(func, wait) {
-//   let timeout;
-//   return (...args) => {
-//     clearTimeout(timeout);
-//     timeout = setTimeout(() => func.apply(this, args), wait);
-//   };
-// }
-
 export async function getMovieById(movieId) {
   const apiKey = "9dd6a06096e62e027d257b44a59fba23";
   const res = await fetch(
@@ -42,5 +36,11 @@ export async function getMovieTrailerById(movieId) {
     `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${apiKey}`
   );
   const data = await res.json();
+  return data;
+}
+
+export async function getImage() {
+  let { data, error } = await supabase.from("images").select("imageUrl");
+
   return data;
 }

@@ -8,35 +8,38 @@ import { useMovies } from "@/app/_components/MoviesContext";
 
 // Copyright By Giorgi Kakauridze
 
-const HomePage = () => {
+const HomePage = ({ imageUrls }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [fadeClass, setFadeClass] = useState("fade-in");
+
   const { movies } = useMovies();
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setFadeClass("fade-out");
-      setTimeout(() => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % movies.length);
-        setFadeClass("fade-in");
-      }, 500);
-    }, 5000);
+    if (imageUrls.length) {
+      const interval = setInterval(() => {
+        setFadeClass("fade-out");
+        setTimeout(() => {
+          setCurrentIndex((prevIndex) => (prevIndex + 1) % movies.length);
+          setFadeClass("fade-in");
+        }, 500);
+      }, 5000);
+      return () => clearInterval(interval);
+    }
+  }, [imageUrls]);
 
-    return () => clearInterval(interval);
-  }, []);
-  console.log(movies[currentIndex].urlName);
   return (
     <main className="relative w-full h-full min-h-screen bg-black ">
       <div className={` ${fadeClass} w-full h-screen`}>
         <Image
-          src={`https://netflixy-three.vercel.app${movies[currentIndex].urlName}`}
+          src={movies[currentIndex].src}
           fill
           placeholder="blur"
-          quality={55}
-          blurDataURL={movies[currentIndex].src.blurDataURL}
+          blurDataURL={movies[currentIndex].blurDataURL}
+          quality={100}
           className="object-cover object-top"
-          alt={movies[currentIndex].text}
+          alt={movies[currentIndex].urlName}
         />
+
         <div className="md:gap-10 gap-5 opacity-80 md:mx-5  lg:px-36 lg:py-36 p-12 pb-16 inset-0 flex flex-col items-start justify-end h-full ">
           <h1
             className={`text-2xl md:text-4xl lg:text-5xl text-white  tracking-tight font-normal text-center ${fadeClass}`}
