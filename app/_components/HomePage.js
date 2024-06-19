@@ -29,7 +29,7 @@ const HomePage = ({ imageUrls }) => {
 
   return (
     <main className="relative w-full h-full min-h-screen bg-black ">
-      <div className={` ${fadeClass} w-full h-screen`}>
+      <div className={`${fadeClass} w-full h-screen`}>
         <img
           src={movies[currentIndex].src.src}
           // fill
