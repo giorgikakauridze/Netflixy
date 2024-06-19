@@ -30,14 +30,14 @@ const HomePage = ({ imageUrls }) => {
   return (
     <main className="relative w-full h-full min-h-screen bg-black ">
       <div className={` ${fadeClass} w-full h-screen`}>
-        <Image
-          src={movies[currentIndex].src}
-          fill
-          placeholder="blur"
-          blurDataURL={movies[currentIndex].blurDataURL}
-          quality={100}
-          className="object-cover object-top"
-          alt={movies[currentIndex].urlName}
+        <img
+          src={movies[currentIndex].src.src}
+          // fill
+          // placeholder="blur"
+          // blurDataURL={movies[currentIndex].blurDataURL}
+          // quality={100}
+          // className="object-cover object-top"
+          // alt={movies[currentIndex].urlName}
         />
 
         <div className="md:gap-10 gap-5 opacity-80 md:mx-5  lg:px-36 lg:py-36 p-12 pb-16 inset-0 flex flex-col items-start justify-end h-full ">
