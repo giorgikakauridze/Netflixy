@@ -47,7 +47,7 @@ const DetailsPage = ({ movieTrailer, movie }) => {
         {officialTrailer ? (
           <iframe
             className="w-full h-72   sm:w-3/4 md:h-[500px] lg:h-[750px] lg:w-2/3 "
-            src={`https://www.youtube.com/embed/${officialTrailer[0]?.key}?controls=0&rel=0&modestbranding=0`}
+            src={`https://www.youtube.com/embed/${officialTrailer[0]?.key}?controls=1&rel=0&modestbranding=0`}
             title="YouTube video player"
             frameborder="1"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

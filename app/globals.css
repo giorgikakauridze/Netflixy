@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  color: white;
+}
+
 :root {
   --foreground-rgb: 16, 20, 29;
   --background-start-rgb: 16, 20, 29;

@@ -37,7 +37,7 @@ const ApesPage = () => {
       <div className="flex py-40  justify-center">
         <iframe
           className="w-full h-72   sm:w-3/4 md:h-[500px] lg:h-[750px] lg:w-2/3 "
-          src={`https://www.youtube.com/embed/XtFI7SNtVpY?controls=0&rel=0&modestbranding=1`}
+          src={`https://www.youtube.com/embed/XtFI7SNtVpY?controls=1&rel=0&modestbranding=1`}
           title="YouTube video player"
           frameborder="1"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

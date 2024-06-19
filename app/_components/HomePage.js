@@ -35,7 +35,7 @@ const HomePage = ({ imageUrls }) => {
           fill
           placeholder="blur"
           blurDataURL={movies[currentIndex].blurDataURL}
-          quality={50}
+          quality={60}
           className="object-cover object-top"
           alt={movies[currentIndex].urlName}
         />
